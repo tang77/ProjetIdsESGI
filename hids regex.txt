@@ -1,0 +1,12 @@
+sql regex:
+'\s*--(\s|')
+'\s*(and|or|xor|&&|\|\|)\s*\(?\s*('|[0-9]|`?[a-z\._-]+`?\s*(=|like)|[a-z]+\s*\()
+'\s*(not\s+)?in\s*\(\s*['0-9]
+union(\s+all)?(\s*\(\s*|\s+)select(`|\s)
+select(\s*`|\s+)(\*|[a-z0-9_\, ]*)(`\s*|\s+)from(\s*`|\s+)[a-z0-9_\.]*
+insert\s+into(\s*`|\s+).*(`\s*|\s+)(values\s*)?\(.*\)
+update(\s*`|\s+)[a-z0-9_\.]*(`\s*|\s+)set(\s*`|\s+).*=
+delete\s+from(\s*`|\s+)[a-z0-9_\.]*`?
+
+
+union((\s|\+)+all)?(\+|\s*\(\s*|\s+)select(\+|`|\s)
